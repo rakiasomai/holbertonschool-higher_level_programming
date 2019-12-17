@@ -8,32 +8,31 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *mover = *head;
-	int i = 0, j = 0;
-	char array[50];
-
-	if (head == NULL)
-		return (0);
-	if (*head == NULL || (*head)->next == NULL)
-		return (1);
-	if (loopcheck(mover) == 1)
-		return (0);
-	while (mover)
-	{
-		array[i] = mover->n;
-		i++;
-		mover = mover->next;
-	}
-	i--;
-	j = 0;
-	while (j < i)
-	{
-		if (array[j] != array[i])
-			return (0);
-		i--;
-		j++;
-	}
-	return (1);
+listint_t *mover = *head;
+int i = 0, j = 0;
+char array[50];
+if (head == NULL)
+return (0);
+if (*head == NULL || (*head)->next == NULL)
+return (1);
+if (loopcheck(mover) == 1)
+return (0);
+while (mover)
+{
+array[i] = mover->n;
+i++;
+mover = mover->next;
+}
+i--;
+j = 0;
+while (j < i)
+{
+if (array[j] != array[i])
+return (0);
+i--;
+j++;
+}
+return (1);
 }
 
 /**
@@ -43,17 +42,15 @@ int is_palindrome(listint_t **head)
  */
 int loopcheck(listint_t *list)
 {
-	listint_t *fast = list, *slow = list;
-
-	if (list == NULL)
-		return (0);
-
-	while (fast && slow && fast->next)
-	{
-		fast = fast->next->next;
-		slow = slow->next;
-		if (fast == slow)
-			return (1);
-	}
-	return (0);
+listint_t *fast = list, *slow = list;
+if (list == NULL)
+return (0);
+while (fast && slow && fast->next)
+{
+fast = fast->next->next;
+slow = slow->next;
+if (fast == slow)
+return (1);
+}
+return (0);
 }
