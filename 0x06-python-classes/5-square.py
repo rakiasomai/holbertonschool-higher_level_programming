@@ -20,6 +20,8 @@ def __init__(self, size=0):
 
     def my_print(self):
         if self.__size is 0:
-            print("")
+            print()
         for y in range(self.__size):
-            print("#" * self.__size)
+            for x in range(self.__size):
+                print("#" * self.__size)
+            print()
