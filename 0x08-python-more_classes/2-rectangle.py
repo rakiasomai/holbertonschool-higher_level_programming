@@ -1,9 +1,4 @@
-#!/user/bin/python3
-'''
-this is a rectange module
-'''
-
-
+#!/usr/bin/python3
 class Rectangle:
     def __init__(self, width=0, height=0):
         self.width = width
