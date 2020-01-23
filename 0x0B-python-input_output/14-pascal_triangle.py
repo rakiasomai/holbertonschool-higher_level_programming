@@ -11,7 +11,6 @@ def pascal_triangle(n):
         row = [1]
         for z in range(1, y):
             elem = triangle[y-1][z-1] + triangle[y-1][z]
-            print(elem)
             row.append(elem)
         row.append(1)
         triangle.append(row)
