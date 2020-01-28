@@ -23,11 +23,11 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
-        '''def str'''
+        '''def __str__'''
         return "[square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
                                                          self.x,
                                                          self.y,
-                                                         self.size)
+                                                         self.width)
 
     def update(self, *args, **kwargs):
         '''def update'''
