@@ -24,3 +24,25 @@ class Square(Rectangle):
                                                          self.x,
                                                          self.y,
                                                          self.width)
+
+    def update(self, *args, **kwargs):
+        if len(args):
+            for z, arg in enumerate(args):
+                if z == 0:
+                    self.id = arg
+                elif z == 1:
+                    self.size = arg
+                elif z == 2:
+                    self.x = arg
+                elif z == 3:
+                    self.y = arg
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "size":
+                    self.size = value 
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
