@@ -23,7 +23,7 @@ class Square(Rectangle):
 
     def __str__(self):
         '''__str__ function'''
-        result = "[square] ({}) {}/{} - {}"
+        result = "[Square] ({}) {}/{} - {}"
         return result.format(self.id, self.x, self.y, self.width)
 
     def update(self, *args, **kwargs):
