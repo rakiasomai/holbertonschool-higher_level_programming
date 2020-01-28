@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-'''class Rectangle
-'''
+'''file Rectangle'''
 from models.base import Base
 
 
 class Rectangle(Base):
-
+    '''class rectangle'''
     def __init__(self, width, height, x=0, y=0, id=None):
         '''init rectangle'''
         self.width = width
@@ -16,12 +15,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        '''def width'''
+        '''proprety width'''
         return self.__width
 
     @width.setter
     def width(self, value):
-        '''setter widt'''
+        '''setter width'''
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -30,7 +29,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        '''def heighet'''
+        '''proprety heighet'''
         return self.__height
 
     @height.setter
@@ -44,7 +43,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        '''de x'''
+        '''proprty x'''
         return self.__x
 
     @x.setter
@@ -58,7 +57,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        '''def y'''
+        '''prprety y'''
         return self.__y
 
     @y.setter
