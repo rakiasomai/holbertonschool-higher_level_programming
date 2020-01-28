@@ -9,10 +9,10 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
 
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
@@ -24,7 +24,7 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
-            raise ValueError("width must be >= 0")
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -36,7 +36,7 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
-            raise ValueError("height must be >= 0")
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -65,3 +65,42 @@ class Rectangle(Base):
 
     def area(self):
         return self.__width * self.__height
+
+    def display(self):
+        print("\n" * self.y, end="")
+        for z in range(self.height):
+            print(" " * self.x, end="")
+            print("#" * self.width)
+
+    def __str__(self):
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.x,
+                                                       self.y,
+                                                       self.width,
+                                                       self.height)
+
+    def update(self, *args, **kwargs):
+        if len(args):
+            for z, arg in enumerate(args):
+                if z == 0:
+                    self.id = arg
+                elif z == 1:
+                    self.width = arg
+                elif z == 2:
+                    self.height = arg
+                elif z == 3:
+                    self.x = arg
+                elif z == 4:
+                    self.y = arg
+        else:
+            for key, value in kwargs.items():
+                if key == "width":
+                    self.width = value
+                if key == "height":
+                    self.height = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
+                if key == "id":
+                    self.id = value
