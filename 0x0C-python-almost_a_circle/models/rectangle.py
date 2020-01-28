@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-class Rectangle
-"""
+'''class Rectangle
+'''
 from models.base import Base
 
 
