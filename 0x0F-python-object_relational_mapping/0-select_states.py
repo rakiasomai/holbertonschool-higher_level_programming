@@ -10,7 +10,7 @@ if __name__ == "__main__":
                          host='localhost',
                          port=3306)
     cur = datab.cursor()
-    cur.execute("SELECT id, name FROM states ORDER BY id ASC")
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
     allStates = cur.fetchall()
 
     for state in allStates:
