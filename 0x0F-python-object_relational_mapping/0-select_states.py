@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' List all states from a given datab sorted in ascending order by id '''
+''' Print all STATES '''
 if __name__ == "__main__":
     import MySQLdb
     import sys
