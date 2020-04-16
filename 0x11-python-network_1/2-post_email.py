@@ -2,9 +2,10 @@
 '''
 script that takes in a URL and an email, sends a POST request to the passed URL
 '''
-from sys import argv
 import urllib.request
 import urllib.parse
+import sys
+
 if __name__ == "__main__":
     values = {'email': sys.argv[2]}
     data = urllib.parse.urlencode(values)
